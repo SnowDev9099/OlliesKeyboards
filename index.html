@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keyboard Store</title>
+  <!-- Import a Google Font for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Keyboard Store</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About Keyboards</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#cart">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- About Section with descriptive text -->
+    <section id="about" class="about">
+      <h2>About Keyboards</h2>
+      <p>
+        Keyboards have evolved significantly over the years, from classic mechanical designs to modern, customizable options. Whether you're a gamer, a typist, or a creative professional, a quality keyboard not only enhances productivity but also provides a satisfying tactile experience. Explore our collection to find the perfect keyboard that suits your style and needs.
+      </p>
+    </section>
+    
+    <!-- Products Section -->
+    <section id="products" class="products">
+      <h2>Our Products</h2>
+      <div class="product" id="keyboard1">
+        <img src="keyboard1.jpg" alt="Mechanical Keyboard" />
+        <div class="product-details">
+          <h3>Mechanical Keyboard</h3>
+          <p>
+            Experience the click and clack of high-quality mechanical switches designed for both performance and durability.
+          </p>
+          <p class="price">$99.99</p>
+          <button onclick="addToCart('Mechanical Keyboard', 99.99)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product" id="keyboard2">
+        <img src="keyboard2.jpg" alt="Gaming Keyboard" />
+        <div class="product-details">
+          <h3>Gaming Keyboard</h3>
+          <p>
+            Light up your game with customizable RGB lighting and high-performance keys built for gaming enthusiasts.
+          </p>
+          <p class="price">$129.99</p>
+          <button onclick="addToCart('Gaming Keyboard', 129.99)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Cart Section -->
+    <section id="cart" class="cart">
+      <h2>Shopping Cart</h2>
+      <ul id="cart-items"></ul>
+      <p>Total: $<span id="total-price">0.00</span></p>
+      <button onclick="checkout()">Checkout</button>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Keyboard Store. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
