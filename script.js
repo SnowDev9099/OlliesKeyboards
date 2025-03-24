@@ -1,33 +1,20 @@
-let cart = [];
-let totalPrice = 0;
-
-function addToCart(name, price) {
-  cart.push({ name, price });
-  totalPrice += price;
-  updateCart();
+// Open modal with the keyboard name injected in the text
+function openModal(productName) {
+  const modal = document.getElementById('modal');
+  const modalText = document.getElementById('modal-text');
+  modalText.textContent = `You selected: ${productName}.`;
+  modal.style.display = 'block';
 }
 
-function updateCart() {
-  const cartItems = document.getElementById('cart-items');
-  const totalPriceElem = document.getElementById('total-price');
-  cartItems.innerHTML = '';
-  
-  cart.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-    cartItems.appendChild(li);
-  });
-  
-  totalPriceElem.textContent = totalPrice.toFixed(2);
+// Close the modal
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
 }
 
-function checkout() {
-  if (cart.length === 0) {
-    alert('Your cart is empty!');
-    return;
+// Close the modal if the user clicks outside the modal content
+window.onclick = function(event) {
+  const modal = document.getElementById('modal');
+  if (event.target === modal) {
+    closeModal();
   }
-  alert('Thank you for your purchase!');
-  cart = [];
-  totalPrice = 0;
-  updateCart();
-}
+};
